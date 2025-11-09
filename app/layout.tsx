@@ -1,3 +1,8 @@
+import { MantineProvider } from "@mantine/core";
+import "@mantine/core/styles.css";
+import "@mantine/notifications/styles.css";
+import "@mantine/dates/styles.css";
+
 // app/layout.tsx
 import Link from "next/link";
 import "./globals.css";
@@ -6,7 +11,11 @@ export const metadata = {
   title: "Next Routing Workshop",
 };
 
-export default function RootLayout({ children }: { children: React.ReactNode }) {
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
   return (
     <html lang="en">
       <body className="min-h-screen flex flex-col">
@@ -19,9 +28,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           </nav>
         </header>
 
-        <main  className="flex-1 px-6 py-4">{children}</main>
-
-         <footer className="bg-slate-100 text-center text-sm py-3 text-slate-500">
+        <MantineProvider>
+          <main className="flex-1 px-6 py-4">{children}</main>
+        </MantineProvider>
+        <footer className="bg-slate-100 text-center text-sm py-3 text-slate-500">
           © {new Date().getFullYear()} Session Planner · All rights reserved
         </footer>
       </body>

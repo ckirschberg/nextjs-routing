@@ -11,7 +11,7 @@ export default function ContactPage() {
   function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
     // ... pretend to send
-    router.push("/thank-you");
+    router.push("/thank-you", );
   }
 
   return (
