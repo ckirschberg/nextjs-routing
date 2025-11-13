@@ -3,7 +3,7 @@ export default function HomePage() {
   return (
     <main>
       <h1>Next Routing Workshop</h1>
-      <p>Welcome 👋</p>
+      <p>Welcome2 👋</p>
     </main>
   );
 }
