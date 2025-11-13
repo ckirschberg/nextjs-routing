@@ -35,10 +35,11 @@ export default function TodoPage() {
     try {
       setError(null);
 
-      const created = await createTodo({
+      const created: Todo = await createTodo({
         title: title.trim(),
         is_done: false,
       });
+      
 
       // Sæt den nye todo ind i toppen af listen
       setTodos((prev) => [created, ...prev]);
